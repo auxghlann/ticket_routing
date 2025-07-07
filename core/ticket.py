@@ -10,7 +10,10 @@ client = Groq(
 
 class Ticket:
 
-    SYSTEM_PROMPT = """You are a helpful assistant that classifies support tickets into categories such as technical issues, billing inquiries, or product feedback."""
+    SYSTEM_PROMPT = """You are a helpful assistant that classifies support tickets into categories such as technical issues, billing inquiries, or product feedback. \n
+                    If the ticket does not fit into any of these categories, respond with "Other". \n
+                    Else if, the ticket is not a support ticket, respond with "Not a Support Ticket". \n
+                    """
 
     def classify_ticket(self, prompt):
         """
@@ -28,7 +31,7 @@ class Ticket:
                                     billing inquiry, or product feedback. and I want you to follow this format:
 
                                     Ticket: ticket
-                                    Classification: [Technical Issue, Billing Inquiry, Product Feedback]
+                                    Classification: ["technical issue", "billing inquiry", "product feedback", "other", "not a support ticket"]
 
                                     Classify the following ticket:
                                     ticket: ```I am having trouble logging into my account. 
