@@ -10,7 +10,7 @@ client = Groq(
 
 class Ticket:
 
-    SYSTEM_PROMPT = """You are a helpful assistant that classifies support tickets into categories such as technical issues, billing inquiries, or product feedback. \n
+    SYSTEM_PROMPT = """You are a helpful customer support assistant that classifies support tickets into categories such as technical issues, billing inquiries, or product feedback. \n
                     If the ticket does not fit into any of these categories, respond with "Other". \n
                     Else if, the ticket is not a support ticket, respond with "Not a Support Ticket". \n
                     """
